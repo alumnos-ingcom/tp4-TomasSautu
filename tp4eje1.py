@@ -1,5 +1,5 @@
 ################
-# Martín René - @martinvilu
+# Tomás Sautú- @TomasSautu
 # Plantilla de ejercicio
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
@@ -17,7 +17,6 @@ def ingreso_entero(mensaje):
         raise IngresoIncorrecto("No era un número genio!") from err
     return entero
 
-
 def ingreso_entero_reintento(mensaje, cantidad_reintentos= 5):
     intentos = cantidad_reintentos
     while intentos >= 0:
@@ -28,15 +27,12 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos= 5):
             intentos = intentos - 1
     raise IngresoIncorrecto("No era un número titan!")
 
-
 def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=50):
     entero = ingreso_entero(mensaje)
     if (entero >= valor_minimo and entero <= valor_maximo):
         return entero
     else:
         raise IngresoIncorrecto(f"{entero} no era un número entre 0 y 50 fiera")
-
-
 
 
 class IngresoIncorrecto(Exception):
@@ -54,4 +50,3 @@ def prueba():
 
 if __name__ == "__main__":
     prueba()
-    

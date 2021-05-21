@@ -7,34 +7,35 @@
 
 def ingreso_entero(mensaje):
     """
-    Esta funcion muestra un mensaje y agrega la # para indicar el ingreso
+    Esta funcion muestra un mensaje para indicar el ingreso
     de un número entero.
     """
-    ingreso = input(mensaje + " #")
+    ingreso = input(mensaje)
     try:
         entero = int(ingreso)
     except ValueError as err:
-        raise IngresoIncorrecto("No era un número crack!") from err
+        raise IngresoIncorrecto("No era un número genio!") from err
     return entero
+
+
+def ingreso_entero_reintento(mensaje, cantidad_reintentos= 5):
+    intentos = cantidad_reintentos
+    while intentos >= 0:
+        try: 
+            return ingreso_entero(mensaje)        
+        except:
+            print(f"Te quedan {intentos} champion")
+            intentos = intentos - 1
+    raise IngresoIncorrecto("No era un número titan!")
+
 
 def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=50):
-    entero=(ingreso_entero(mensaje))
+    entero = ingreso_entero(mensaje)
     if (entero >= valor_minimo and entero <= valor_maximo):
-        
         return entero
-    
     else:
-        raise IngresoIncorrecto(f"{entero} no era un número entre 0 y 50 crack")
-    return entero
+        raise IngresoIncorrecto(f"{entero} no era un número entre 0 y 50 fiera")
 
-def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
-    while cantidad_reintentos > 0:
-        try:
-            return ingreso_entero(mensaje)
-        except IngresoIncorrecto as err:
-            cantidad_reintentos = cantidad_reintentos-1
-#             print(f"Te quedan {cantidad_reintentos} intentos")
-    raise IngresoIncorrecto(f"Luego de 5 intentos")
 
 
 
@@ -44,10 +45,12 @@ class IngresoIncorrecto(Exception):
 
 
 def prueba():
-    print("Inserta un número entre 0 y 50")
-    numero = ingreso_entero("Largame el número ")
-    numero = ingreso_entero_restringido("")
-    numero = ingreso_entero_reintento()
+    numero = ingreso_entero("Largame el número crack: ")
+    print(f"Tu número es {numero}, titan")
+    numero = ingreso_entero_reintento("Largame un número capitan: ")
+    print(f"Tu número es {numero}, ídolo")
+    numero = ingreso_entero_restringido("Inserta un número entre el 0 y el 50: ")
+    print(f"Este fué tu número {numero}, master")
 
 if __name__ == "__main__":
     prueba()

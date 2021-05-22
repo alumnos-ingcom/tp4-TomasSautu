@@ -9,16 +9,22 @@ from tp4eje1 import ingreso_entero
 def signo(numero):
     
     if (numero == 0):
-        return "El número es cero"
+        return 0
     if (numero > 0):
-        return "El número es positivo (+)"
+        return 1
     else:
-        return "El número es negativo (-)"
+        return -1
 
 def prueba():
     numero = ingreso_entero("Ingrese un número para decirle si es positivo o negativo: ")
     valor = signo(numero)
-    print(valor)
+    if valor == 0:
+        print(f"El número es {numero}")
+    else:
+        if valor > 0 :
+            print(f"El número {numero} es positivo (+)")
+        else:
+            print(f"El número {numero} es negativo (-)")
     
 
 if __name__ == "__main__":

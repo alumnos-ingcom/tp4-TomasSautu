@@ -15,6 +15,10 @@ def comparacion(numeroUno, numeroDos):
         return 0
     
 def prueba():
+    print("""Ingrese dos números para ser comparados
+Si el primero es menor que el segundo mostrará ( -1 )
+Si el primero es mayor al segundo mostrará ( 1 )
+En caso de ser iguales mostrará ( 0 )""")
     numero_1 = ingreso_entero("Ingrese el primer número: ")
     numero_2 = ingreso_entero("Ingrese el segundo número: ")
     resultado = comparacion(numero_1, numero_2)

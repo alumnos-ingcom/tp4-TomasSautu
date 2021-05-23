@@ -20,7 +20,7 @@ def prueba():
     if primo == True:
         print(f"El número {numero} es primo")
     else:
-        print(f"El numero {numero} no es primo")
+        print(f"El número {numero} no es primo")
 
 if __name__ == "__main__":
     prueba()

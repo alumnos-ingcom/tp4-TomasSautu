@@ -7,7 +7,7 @@
 
 def ingreso_entero(mensaje):
     """
-    Esta funcion muestra un mensaje para indicar el ingreso
+    Esta función muestra un mensaje para indicar el ingreso
     de un número entero.
     """
     ingreso = input(mensaje)
@@ -18,6 +18,9 @@ def ingreso_entero(mensaje):
     return entero
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos= 5):
+    """Esta función sirva para ingresar un número entero, si lo ingresasado
+    da error, se le da otro intento hasta un máximo de 5 veces.
+    """
     intentos = cantidad_reintentos
     while intentos >= 0:
         try: 
@@ -28,6 +31,9 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos= 5):
     raise IngresoIncorrecto("No era un número titan!")
 
 def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=50):
+    """Esta función pide el ingreso de un número entero pero restringido
+    entre el número 0 y el 50.
+    """
     entero = ingreso_entero(mensaje)
     if (entero >= valor_minimo and entero <= valor_maximo):
         return entero
